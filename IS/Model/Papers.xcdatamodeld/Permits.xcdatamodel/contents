@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20G314" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Paper" representedClassName="Paper" syncable="YES" codeGenerationType="class">
+        <attribute name="annotation" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="journal" optional="YES" attributeType="String"/>
+        <attribute name="keywords" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="author" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="papers" inverseEntity="User"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isAdmin" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="login" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="position" optional="YES" attributeType="String"/>
+        <attribute name="registrationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="surname" optional="YES" attributeType="String"/>
+        <relationship name="papers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Paper" inverseName="author" inverseEntity="Paper"/>
+    </entity>
+    <elements>
+        <element name="Paper" positionX="256.4407958984375" positionY="97.05548095703125" width="128" height="149"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="178"/>
+    </elements>
+</model>
